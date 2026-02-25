@@ -8,9 +8,14 @@ using namespace std;
 int main() {
     Exceptions Exception;
 
-    cout << "Enter initial size of data array\n";
     int size;
-    cin >> size;
+    while (true) {
+        cout << "\nEnter initial size of data array (max: 20)\n";
+        cin >> size;
+        if (Exception.incorrectDataType()) continue;
+        if (Exception.indexOutOfRange(size,20,1)) continue;
+        break;
+    }
 
     cout << "Enter initial selling data\n";
     vector<int> array(size);
@@ -18,6 +23,7 @@ int main() {
         while (true) {
             cin >> array[i];
             if (Exception.incorrectDataType()) continue;
+            if (Exception.indexOutOfRange(array[i], 1000,0)) continue;
             break;
         }
     }
