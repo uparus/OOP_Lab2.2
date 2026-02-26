@@ -12,6 +12,7 @@ int main() {
     while (true) {
         cout << "\nEnter initial size of data array (max: 20)\n";
         cin >> size;
+
         if (Exception.incorrectDataType()) continue;
         if (Exception.indexOutOfRange(size,20,1)) continue;
         break;
@@ -25,8 +26,10 @@ int main() {
             if (Exception.incorrectDataType()) continue;
             if (Exception.indexOutOfRange(array[i], 1000,0)) continue;
             break;
-        }
+        }       
     }
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     Statistics Statistic(array);
 
     enum options{SUM = 1,AVERAGE = 2, BELOW_AVERAGE = 3, ABOVE_AVERAGE = 4, SALES_MAX = 5, SALES_MIN = 6, EXIT = 0};

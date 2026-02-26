@@ -62,3 +62,10 @@ void Statistics::printArray() const {
     }
     cout << endl;
 }
+
+Statistics::Statistics(vector<int> const& a)
+{
+    for (int i = 0; i < a.size(); i++) {
+        sales.push_back(a[i]);
+    }
+}

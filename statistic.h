@@ -9,11 +9,7 @@ class Statistics
 private:
     vector<int> sales;
 public:
-    Statistics(vector<int> const& a) {
-        for (int i = 0; i < a.size(); i++) {
-            sales.push_back(a[i]);
-        }
-    }
+    Statistics(vector<int> const& a); 
     Statistics() = default;
 
     long long sum_sales() const;
