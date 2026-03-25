@@ -9,4 +9,8 @@ add_executable(OOP_lab2_2 main.cpp
         exceptions.cpp
         exceptions.h
         source.cpp
-        source.h)
+        source.h
+        slicedStatisticSource.cpp
+        slicedStatisticSource.h
+        statisticSource.cpp
+        statisticSource.h)

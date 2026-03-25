@@ -1,37 +1,29 @@
 #include<iostream>
+#include <cstdlib>
+#include <ctime>
 #include "source.h"
 #include "exceptions.h"
 #include "statistic.h"
 using namespace std;
 
-Exceptions Exception;
-Statistics Statistic;
+vector<int> initArray() {
+    srand(time(NULL));
+    int sizeMin = 5;
+    int sizeMax = 12;
+    int size = rand() % (sizeMax - sizeMin + 1); //Generating array size between 5 and 12
 
-int optionsMenu() {
-    cout << "Menu:\n"
-    << "1 - find sum of all sales\n"
-    << "2 - find average sales\n"
-    << "3 - find months where sales were below average\n"
-    << "4 - find months where sales were above average\n"
-    << "5 - find sales with maximum price\n"
-    << "6 - find sales with minimum price\n"
-    << "0 - exit" << endl;
-
-    int n;
-    while (true) {
-        cin >> n;
-        if (Exception.incorrectDataType()) continue;
-        if (Exception.indexOutOfRange(n,6,0)) continue;
-        break;
+    vector<int>array(size);
+    int maxValue = 10000;
+    for (int i = 0; i < size; i++) {
+        array[i] = rand() % maxValue; // generating statistic with max value = 100000
     }
-
-    return n;
+    return array;
 }
-
 void printArray(vector<int>const& array) {
     for (auto i : array) {
         cout << i << " ";
     }
     cout << endl;
 }
+
 
